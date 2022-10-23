@@ -12,14 +12,15 @@ def main():
                     data["random"][item_1], data["random"][item_2] = swap(
                         item_2, item_1
                     )
-            print(item_1)
+
+        for each_item in data["random"]:
+            print(each_item)
 
 
 def swap(x, y):
     tmp = x
     x = y
     y = tmp
-    del tmp
     return x, y
 
 
