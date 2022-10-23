@@ -2,8 +2,8 @@ from json import load
 
 
 def main():
-    with open("random.json", "r") as file_in:
-        data = load(file_in)
+    with open("random.json", "r") as raw_file:
+        data = load(raw_file)
         length_of_list = len(data["random"])
 
         for item_1 in range(length_of_list):
@@ -12,15 +12,15 @@ def main():
                     data["random"][item_1], data["random"][item_2] = swap(
                         item_2, item_1
                     )
-        for item in data["random"]:
-            print(item)
+
+        for each_item in data["random"]:
+            print(each_item)
 
 
 def swap(x, y):
     tmp = x
     x = y
     y = tmp
-    del tmp
     return x, y
 
 
